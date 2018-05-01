@@ -29,5 +29,6 @@ fragment RepoInfo on Entry {
   postedBy {
     html_url
     login
+    location
   }
 }

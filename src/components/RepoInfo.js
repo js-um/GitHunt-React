@@ -12,7 +12,7 @@ const RepoInfo = ({
   entry: {
     createdAt,
     repository: { description, stargazers_count, open_issues_count },
-    postedBy: { html_url, login },
+    postedBy: { html_url, login, location },
   },
   children,
 }) => (
@@ -28,6 +28,8 @@ const RepoInfo = ({
       <TimeAgo date={createdAt} />
       &nbsp;by&nbsp;
       <a href={html_url}>{login}</a>
+      &nbsp;in&nbsp;
+      <a href={html_url}>{location}</a>
     </p>
   </div>
 );
@@ -44,6 +46,7 @@ RepoInfo.fragments = {
       postedBy {
         html_url
         login
+        location
       }
     }
   `,
