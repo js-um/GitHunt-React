@@ -29,6 +29,14 @@ fragment RepoInfo on Entry {
   postedBy {
     html_url
     login
-    location
-  }
+    location {
+      city
+      country
+      mapLink
+      weather {
+        summary
+        temperature
+      }
+    }
+  }  
 }

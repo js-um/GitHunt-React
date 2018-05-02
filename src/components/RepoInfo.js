@@ -29,7 +29,9 @@ const RepoInfo = ({
       &nbsp;by&nbsp;
       <a href={html_url}>{login}</a>
       &nbsp;in&nbsp;
-      <a href={html_url}>{location}</a>
+      <a href={location.mapLink}>{location.city}</a>
+      ,&nbsp;{location.country}.&nbsp;({location.weather.summary},{' '}
+      {location.weather.temperature}°F)
     </p>
   </div>
 );
@@ -46,7 +48,15 @@ RepoInfo.fragments = {
       postedBy {
         html_url
         login
-        location
+        location {
+          city
+          country
+          mapLink
+          weather {
+            summary
+            temperature
+          }
+        }
       }
     }
   `,
